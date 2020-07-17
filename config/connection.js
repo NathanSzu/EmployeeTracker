@@ -21,6 +21,7 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
+// Allows connection.query to use promise based methods.
 connection.query = util.promisify(connection.query);
 
 // Export connection for our ORM to use.
