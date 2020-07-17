@@ -12,6 +12,14 @@ router.get("/api/employee", (req, res) => {
     .catch(err => res.json(err))
   });
 
+router.get("/api/employees", (req, res) => {
+    employees.viewAllEmployees()
+    // .then(results => res.json(results))
+    .then(results => console.table(results))
+    .then(res.json('Table loaded!'))
+    .catch(err => res.json(err))
+});
+
 
 // Exports routes for server.js to use.
 module.exports = router;

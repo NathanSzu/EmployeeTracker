@@ -5,6 +5,9 @@ class Employees {
     selectAll() {
         return orm.selectAll('employee')
     }
+    viewAllEmployees(){
+        return orm.viewAllEmployees()
+    }
 }
 
 
