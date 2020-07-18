@@ -6,13 +6,14 @@ class Departments {
         return orm.selectAll('department')
     }
 
-    addDepartment() {
-        return orm.create('department', 'department', values)
+    addDepartment(values) {
+        return orm.createSingle(values)
     }
 
-    removeDepartment() {
+    removeDepartment(value) {
         return orm.delete('department', 'department', value)
     }
+
 }
 
 

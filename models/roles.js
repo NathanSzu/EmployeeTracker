@@ -6,11 +6,11 @@ class Roles {
         return orm.selectAll('role')
     }
 
-    addRole() {
+    addRole(values) {
         return orm.create('role', ['title', 'salary', 'department_id'], values)
     }
 
-    removeRole() {
+    removeRole(value) {
         return orm.delete('role', 'title', value)
     }
 }

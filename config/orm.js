@@ -47,10 +47,22 @@ class ORM {
         return this.connection.query(queryString, [table, ...values])
     }
 
+    createSingle(value) {
+        const queryString = `INSERT INTO department (department) VALUES (?)`;
+
+        return this.connection.query(queryString, value)
+    }
+
     delete(table, cols, value){
         const queryString = 'DELETE FROM ?? WHERE ??=?';
 
         return this.connection.query(queryString, [table, cols, value])
+    }
+
+    update(value){
+        const queryString = `UPDATE employee SET role_id = ? WHERE employee.id = ?`
+
+        return this.connection.query(queryString, [...value])
     }
 }
 
